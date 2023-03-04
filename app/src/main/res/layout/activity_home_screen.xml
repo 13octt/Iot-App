@@ -5,18 +5,14 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:id="@+id/linear_main"
+    android:background="#EAEAEA"
     tools:context=".HomeScreenActivity">
-
-    <LinearLayout
-        android:id="@+id/linear_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="22dp"
-        android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/linear_header"
             android:layout_width="match_parent"
+            android:layout_marginTop="26dp"
             android:layout_height="40dp"
             android:orientation="horizontal">
 
@@ -60,7 +56,8 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true">
+                    android:layout_alignParentEnd="true"
+                    >
 
                     <ImageButton
                         android:id="@+id/notification_img_btn"
@@ -90,7 +87,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="26dp">
+                android:layout_marginBottom="26dp"
+                android:layout_marginTop="26dp">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="170dp"
@@ -105,10 +103,13 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
                         android:text="@string/ho_chi_minh"
+                        android:layout_margin="5dp"
                         android:textColor="@color/white"
+                        android:id="@+id/txt_hcm"
+                        android:textSize="18sp"
                         android:textStyle="bold" />
+
 
                 </androidx.cardview.widget.CardView>
 
@@ -116,7 +117,6 @@
                     android:layout_width="170dp"
                     android:layout_height="106dp"
                     android:layout_alignParentEnd="true"
-                    android:background="@drawable/border_cardview"
                     android:backgroundTint="#EAEAEA">
 
                     <TextView
@@ -133,8 +133,10 @@
 
         <!--Text view for living room ... -->
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
             android:paddingBottom="26dp">
 
             <TextView
@@ -152,7 +154,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="25dp"
-                android:text="@string/living_room"
+                android:text="@string/out_door"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -162,7 +164,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="25dp"
-                android:text="@string/living_room"
+                android:text="@string/bed_room"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -172,7 +174,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="25dp"
-                android:text="@string/living_room"
+                android:text="@string/bathroom"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -188,8 +190,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="26dp">
+                android:layout_height="match_parent">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="170dp"
@@ -255,7 +256,7 @@
                     android:layout_height="106dp"
                     android:layout_alignParentEnd="true"
                     android:background="@drawable/border_cardview"
-                    android:backgroundTint="#EAEAEA" >
+                    android:backgroundTint="@color/white" >
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -315,13 +316,12 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="26dp">
+                android:layout_height="match_parent">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="170dp"
                     android:layout_height="106dp"
-                    android:backgroundTint="#EAEAEA">
+                    android:backgroundTint="@color/white">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -375,7 +375,7 @@
                     android:layout_height="106dp"
                     android:layout_alignParentEnd="true"
                     android:background="@drawable/border_cardview"
-                    android:backgroundTint="#EAEAEA" >
+                    android:backgroundTint="@color/white" >
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -436,21 +436,21 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="22dp"
             android:layout_marginEnd="16dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:id="@+id/linear_main_light">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="26dp">
+
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="170dp"
                     android:layout_height="106dp"
-                    android:backgroundTint="#EAEAEA">
+                    android:backgroundTint="@color/white"
+                    android:id="@+id/card_view_main_light">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:id="@+id/relative_main_light">
 
                         <ImageView
                             android:id="@+id/a73"
@@ -495,9 +495,17 @@
 
                 </androidx.cardview.widget.CardView>
 
-            </RelativeLayout>
-
         </LinearLayout>
 
-    </LinearLayout>
+<!--    Bottom Navigation Bar   -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_height="65dp"
+            app:menu="@menu/bottom_navigation"/>
+    </RelativeLayout>
 </LinearLayout>
