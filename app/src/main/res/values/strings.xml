@@ -22,4 +22,7 @@
     <string name="out_door">Outdoor</string>
     <string name="bed_room">Bedroom</string>
     <string name="bathroom">Bathroom</string>
+    <string name="outdoor">Outdoor</string>
+    <string name="bedroom">Bedroom</string>
+    <string name="cctv">CCTV</string>
 </resources>
