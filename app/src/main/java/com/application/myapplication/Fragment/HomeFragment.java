@@ -9,9 +9,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -22,6 +24,8 @@ import org.w3c.dom.Text;
 public class HomeFragment extends Fragment {
 
     LinearLayout roomLinearLayout;
+    private int flag = 0;
+    Button btnLamp;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -90,6 +94,20 @@ public class HomeFragment extends Fragment {
 //                onClickFragment(new BathRoomFragment());
 //            }
 //        });
+
+       btnLamp = getView().findViewById(R.id.btn_lamp);
+       btnLamp.setOnClickListener(view1 -> {
+           flag++;
+           if(flag % 2 == 0){
+               Log.d("btn", "off" );
+               // Xử lí sự kiện khi tắt nút
+           }
+           else {
+               Log.d("btn", "on" );
+               // Xử lí sự kiện khi mở nút
+
+           }
+       });
 
     }
 

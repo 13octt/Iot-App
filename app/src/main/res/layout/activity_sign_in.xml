@@ -9,24 +9,29 @@
     tools:context=".User.SignInActivity">
 
     <EditText
+        android:id="@+id/sign_in_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/email"
         android:imeOptions="actionNext"
         android:inputType="textEmailAddress"
         android:maxLength="100"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        android:textSize="22sp" />
 
     <EditText
+        android:id="@+id/sign_in_pass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/password"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
         android:maxLength="100"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        android:textSize="22sp" />
 
     <Button
+        android:id="@+id/btn_sign_in"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"

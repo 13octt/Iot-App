@@ -6,6 +6,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.application.myapplication.Fragment.CameraFragment;
@@ -13,9 +15,16 @@ import com.application.myapplication.Fragment.HomeFragment;
 import com.application.myapplication.Fragment.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import org.eclipse.paho.android.service.MqttAndroidClient;
+
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
-    TextView livingRoom, outDoor, bedRoom, bathRoom;
+
+    private MqttAndroidClient mqttAndroidClient;
+    private static final String TOPIC_TEMPERATURE = "TEMP";
+    private static final String TOPIC_HUMIDITY = "HUMI";
+    private static final String TOPIC_GAS = "GAS";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
             }
             return true;
         });
-
     }
 
     private void replaceFragment(Fragment fragment) {
@@ -49,4 +57,6 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.relative_bottom_nav, fragment);
         fragmentTransaction.commit();
     }
+
+
 }

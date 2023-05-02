@@ -1,20 +1,21 @@
 {
   "project_info": {
-    "project_number": "578510325540",
-    "project_id": "android-iot--s-project",
-    "storage_bucket": "android-iot--s-project.appspot.com"
+    "project_number": "422004029293",
+    "firebase_url": "https://duy-s-smart-home-94778-default-rtdb.firebaseio.com",
+    "project_id": "duy-s-smart-home-94778",
+    "storage_bucket": "duy-s-smart-home-94778.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:578510325540:android:ddfa43d3c5a1ac211995b1",
+        "mobilesdk_app_id": "1:422004029293:android:eff8f9e3dbbad467860c64",
         "android_client_info": {
           "package_name": "com.application.myapplication"
         }
       },
       "oauth_client": [
         {
-          "client_id": "578510325540-lm7titlhru49imdu3patimjehidg5e8p.apps.googleusercontent.com",
+          "client_id": "422004029293-sr6rfok199dgjjjheeif24k6nh9sqvhu.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.application.myapplication",
@@ -22,20 +23,20 @@
           }
         },
         {
-          "client_id": "578510325540-9c3ieql6ibvrb19c1o49qfi9t3nsgab5.apps.googleusercontent.com",
+          "client_id": "422004029293-154vhfvi04fir4pfn1rqlotp6ersr6s6.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC-7J9WDuamGwpPqzctbK6fJxyvGdZfRyI"
+          "current_key": "AIzaSyB8ZRxOYB0fPM-KHkoKQT-WRS55HQgdVo0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "578510325540-9c3ieql6ibvrb19c1o49qfi9t3nsgab5.apps.googleusercontent.com",
+              "client_id": "422004029293-154vhfvi04fir4pfn1rqlotp6ersr6s6.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

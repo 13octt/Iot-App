@@ -10,30 +10,64 @@
     tools:context=".User.SignUpActivity">
 
     <EditText
-        android:id="@+id/edt_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
+        android:autofillHints="name"
+        android:hint="Your username"
+        android:textSize="22sp"
+        android:inputType="textPersonName"
+        android:id="@+id/edt_user_name"/>
+
+    <EditText
+        android:id="@+id/edt_email"
+        android:textSize="22sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/email"
         android:imeOptions="actionNext"
+        android:autofillHints="emailAddress"
         android:inputType="textEmailAddress"
-        android:maxLength="100"
+        android:maxLength="30"
         android:textColor="@color/black" />
 
     <EditText
         android:id="@+id/edt_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"
+        android:hint="@string/password"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
+        android:textSize="22sp"
+        android:autofillHints="password"
+        android:maxLength="100"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/edt_re_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/re_enter_password"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:textSize="22sp"
+        android:autofillHints="password"
         android:maxLength="100"
         android:textColor="@color/black" />
 
     <Button
         android:id="@+id/btn_sign_up"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="Sign up" />
+        android:text="@string/sign_up" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="@string/already_have_an_account"
+        android:layout_marginTop="12dp"
+        android:textStyle="italic"
+        android:id="@+id/txt_sign_in"/>
 
 </LinearLayout>

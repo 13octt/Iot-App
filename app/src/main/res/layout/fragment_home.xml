@@ -152,6 +152,7 @@
                         android:src="@drawable/lamp" />
 
                     <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/btn_lamp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
