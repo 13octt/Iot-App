@@ -70,12 +70,12 @@
                     tools:ignore="TouchTargetSizeCheck" />
 
                 <ImageButton
-                    android:id="@+id/add_img_btn"
+                    android:id="@+id/btn_log_out"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="#EAEAEA"
-                    android:contentDescription="@string/add"
-                    android:src="@drawable/add"
+                    android:contentDescription="@string/log_out"
+                    android:src="@drawable/baseline_logout_24"
                     tools:ignore="TouchTargetSizeCheck" />
             </LinearLayout>
         </RelativeLayout>
