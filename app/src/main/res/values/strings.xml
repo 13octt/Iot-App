@@ -3,14 +3,14 @@
     <string name="ho_chi_minh">Ho Chi Minh</string>
     <string name="welcome_home">Welcome Home</string>
     <string name="cristiano">Cristiano</string>
-    <string name="lamp">Lamp</string>
+    <string name="lamp">Room Light</string>
     <string name="off">Off</string>
     <string name="on">On</string>
     <string name="tv_lg">TV LG</string>
     <string name="_2_device">2 Device</string>
     <string name="toshiba_ac">Toshiba AC</string>
-    <string name="lg_fan">LG FAN</string>
-    <string name="main_light">Main Light</string>
+    <string name="lg_fan">LG Fan</string>
+    <string name="main_light">Home Light</string>
     <string name="living_room">Living Room</string>
     <string name="notify">Notify</string>
     <string name="add">Add</string>
@@ -33,4 +33,8 @@
     <string name="re_enter_password">Re-enter password</string>
     <string name="already_have_an_account">Already have an account</string>
     <string name="log_out">log out</string>
+    <string name="temperature">Temperature</string>
+    <string name="humidity">Humidity</string>
+    <string name="_25_c">25°C</string>
+    <string name="_50">50%</string>
 </resources>

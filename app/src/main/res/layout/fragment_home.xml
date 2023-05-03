@@ -4,116 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#12283D"
     android:orientation="vertical"
     tools:context=".Fragment.HomeFragment">
-
-<!--    <LinearLayout-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="16dp"-->
-<!--        android:layout_marginTop="22dp"-->
-<!--        android:layout_marginEnd="16dp"-->
-<!--        android:orientation="horizontal">-->
-
-<!--        <RelativeLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_marginBottom="26dp">-->
-
-<!--            <androidx.cardview.widget.CardView-->
-<!--                android:layout_width="170dp"-->
-<!--                android:layout_height="106dp"-->
-<!--                android:background="@drawable/border_cardview"-->
-<!--                app:cardCornerRadius="15dp">-->
-
-<!--                <View-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:background="@drawable/gradient_background" />-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/txt_hcm"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_margin="5dp"-->
-<!--                    android:text="@string/ho_chi_minh"-->
-<!--                    android:textColor="@color/white"-->
-<!--                    android:textSize="18sp"-->
-<!--                    android:textStyle="bold" />-->
-
-
-<!--            </androidx.cardview.widget.CardView>-->
-
-<!--            <androidx.cardview.widget.CardView-->
-<!--                android:layout_width="170dp"-->
-<!--                android:layout_height="106dp"-->
-<!--                android:layout_alignParentEnd="true"-->
-<!--                android:backgroundTint="#EAEAEA"-->
-<!--                app:cardCornerRadius="15dp">-->
-
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_gravity="center_horizontal"-->
-<!--                    android:text="@string/ho_chi_minh"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:textStyle="bold" />-->
-<!--            </androidx.cardview.widget.CardView>-->
-<!--        </RelativeLayout>-->
-
-<!--    </LinearLayout>-->
-
-<!--    &lt;!&ndash;Text view for living room ... &ndash;&gt;-->
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:id="@+id/linear_iot_room"-->
-<!--        android:paddingBottom="26dp">-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/iot_living_room"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="16dp"-->
-<!--            android:layout_marginTop="25dp"-->
-<!--            android:text="@string/living_room"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textSize="14sp"-->
-<!--            android:textStyle="bold" />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/iot_out_door"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="16dp"-->
-<!--            android:layout_marginTop="25dp"-->
-<!--            android:text="@string/outdoor"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textSize="14sp"-->
-<!--            android:textStyle="bold" />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/iot_bed_room"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="16dp"-->
-<!--            android:layout_marginTop="25dp"-->
-<!--            android:text="@string/bedroom"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textSize="14sp"-->
-<!--            android:textStyle="bold" />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/iot_bath_room"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="16dp"-->
-<!--            android:layout_marginTop="25dp"-->
-<!--            android:text="@string/bathroom"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textSize="14sp"-->
-<!--            android:textStyle="bold" />-->
-<!--    </LinearLayout>-->
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -136,7 +29,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#12283D" />
+                    android:background="#888F97" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -169,18 +62,9 @@
                         android:layout_below="@id/a7"
                         android:layout_marginStart="11dp"
                         android:text="@string/lamp"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/device_number"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/device_name"
-                        android:layout_marginStart="11dp"
-                        android:text="@string/_2_device"
-                        android:textColor="@color/white" />
 
                 </RelativeLayout>
 
@@ -192,7 +76,7 @@
                 android:layout_height="106dp"
                 android:layout_alignParentEnd="true"
                 android:background="@drawable/border_cardview"
-                android:backgroundTint="#12283D"
+                android:backgroundTint="#888F97"
                 app:cardCornerRadius="15dp">
 
                 <RelativeLayout
@@ -209,6 +93,7 @@
                         android:src="@drawable/baseline_tv_24" />
 
                     <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/btn_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -225,18 +110,9 @@
                         android:layout_below="@id/television"
                         android:layout_marginStart="11dp"
                         android:text="@string/tv_lg"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/device_number_tv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/device_television"
-                        android:layout_marginStart="11dp"
-                        android:text="@string/_2_device"
-                        android:textColor="@color/white" />
 
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -260,7 +136,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="170dp"
                 android:layout_height="106dp"
-                android:backgroundTint="#12283D"
+                android:backgroundTint="#888F97"
                 app:cardCornerRadius="15dp">
 
                 <RelativeLayout
@@ -277,6 +153,7 @@
                         android:src="@drawable/air" />
 
                     <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/btn_ac"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -293,18 +170,10 @@
                         android:layout_below="@id/a72"
                         android:layout_marginStart="8dp"
                         android:text="@string/toshiba_ac"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/device_number2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/device_name2"
-                        android:layout_marginStart="8dp"
-                        android:text="@string/_2_device"
-                        android:textColor="@color/white" />
                 </RelativeLayout>
 
 
@@ -315,7 +184,7 @@
                 android:layout_height="106dp"
                 android:layout_alignParentEnd="true"
                 android:background="@drawable/border_cardview"
-                android:backgroundTint="#12283D"
+                android:backgroundTint="#888F97"
                 app:cardCornerRadius="15dp">
 
                 <RelativeLayout
@@ -332,6 +201,7 @@
                         android:src="@drawable/fan" />
 
                     <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/btn_fan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -348,18 +218,9 @@
                         android:layout_below="@id/a71"
                         android:layout_marginStart="8dp"
                         android:text="@string/lg_fan"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/device_number_fan"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/device_fan"
-                        android:layout_marginStart="8dp"
-                        android:text="@string/_2_device"
-                        android:textColor="@color/white" />
 
                 </RelativeLayout>
 
@@ -385,7 +246,7 @@
             android:id="@+id/card_view_main_light"
             android:layout_width="170dp"
             android:layout_height="106dp"
-            android:backgroundTint="#12283D"
+            android:backgroundTint="#888F97"
             app:cardCornerRadius="15dp">
 
             <RelativeLayout
@@ -403,6 +264,7 @@
                     android:src="@drawable/baseline_lightbulb_24" />
 
                 <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/btn_light"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -419,24 +281,131 @@
                     android:layout_below="@id/a73"
                     android:layout_marginStart="8dp"
                     android:text="@string/main_light"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/device_number3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/device_name3"
-                    android:layout_marginStart="8dp"
-                    android:text="@string/_2_device"
-                    android:textColor="@color/white" />
 
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="26dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="170dp"
+                android:layout_height="106dp"
+                android:backgroundTint="#888F97"
+                app:cardCornerRadius="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/img_temp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:contentDescription="@string/temperature"
+                        android:src="@drawable/baseline_air_24" />
+
+
+                    <TextView
+                        android:id="@+id/temp_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/img_temp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/temperature"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="32sp"
+                        android:textStyle="bold"
+                        android:text="@string/_25_c"
+                        android:layout_below="@id/img_temp"
+                        android:layout_centerHorizontal="true"
+                        />
+
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="170dp"
+                android:layout_height="106dp"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/border_cardview"
+                android:backgroundTint="#888F97"
+                app:cardCornerRadius="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/img_humidity"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:contentDescription="@string/humidity"
+                        android:src="@drawable/baseline_water_drop_24" />
+
+                    <TextView
+                        android:id="@+id/humidity_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/img_humidity"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="12dp"
+                        android:text="@string/humidity"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="32sp"
+                        android:textStyle="bold"
+                        android:text="@string/_50"
+                        android:layout_below="@id/img_humidity"
+                        android:layout_centerHorizontal="true"
+                        />
+
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
 
 
 
