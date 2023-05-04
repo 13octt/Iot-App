@@ -18,6 +18,12 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".BottomSheet.HumiBottomSheet"
+            android:exported="false" />
+        <activity
+            android:name=".BottomSheet.TempBottomSheet"
+            android:exported="false" />
+        <activity
             android:name=".User.SignUpActivity"
             android:exported="false">
             <meta-data
@@ -38,7 +44,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".MainActivity"
             android:exported="true">

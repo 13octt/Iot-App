@@ -37,4 +37,7 @@
     <string name="humidity">Humidity</string>
     <string name="_25_c">25°C</string>
     <string name="_50">50%</string>
+    <string name="visualize">Visualize</string>
+    <string name="setting">Setting</string>
+    <string name="dashboard">Dashboard</string>
 </resources>

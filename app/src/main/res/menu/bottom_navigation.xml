@@ -12,7 +12,12 @@
 
     <item
         android:id="@+id/action_profile"
-        android:title="Profile"
+        android:title="@string/visualize"
         android:icon="@drawable/vector_profile" />
+
+    <item
+        android:id="@+id/action_setting"
+        android:title="@string/setting"
+        android:icon="@drawable/baseline_settings_24" />
 
 </menu>

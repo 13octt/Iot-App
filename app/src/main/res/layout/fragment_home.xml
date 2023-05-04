@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#12283D"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".Fragment.HomeFragment">
 
@@ -305,6 +305,7 @@
             android:layout_marginBottom="26dp">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_temp"
                 android:layout_width="170dp"
                 android:layout_height="106dp"
                 android:backgroundTint="#888F97"
@@ -328,23 +329,23 @@
                         android:id="@+id/temp_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toEndOf="@id/img_temp"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/img_temp"
                         android:text="@string/temperature"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/temperature_value_text_view"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:textSize="32sp"
-                        android:textStyle="bold"
-                        android:text="@string/_25_c"
                         android:layout_below="@id/img_temp"
                         android:layout_centerHorizontal="true"
-                        />
+                        android:text="@string/_25_c"
+                        android:textSize="32sp"
+                        android:textStyle="bold" />
 
 
                 </RelativeLayout>
@@ -353,6 +354,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_humidity"
                 android:layout_width="170dp"
                 android:layout_height="106dp"
                 android:layout_alignParentEnd="true"
@@ -377,23 +379,23 @@
                         android:id="@+id/humidity_textview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toEndOf="@id/img_humidity"
-                        android:layout_marginTop="20dp"
                         android:layout_marginStart="12dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@id/img_humidity"
                         android:text="@string/humidity"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/humidity_value_text_view"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:textSize="32sp"
-                        android:textStyle="bold"
-                        android:text="@string/_50"
                         android:layout_below="@id/img_humidity"
                         android:layout_centerHorizontal="true"
-                        />
+                        android:text="@string/_50"
+                        android:textSize="32sp"
+                        android:textStyle="bold" />
 
 
                 </RelativeLayout>
@@ -405,8 +407,6 @@
         </RelativeLayout>
 
     </LinearLayout>
-
-
 
 
 </LinearLayout>
