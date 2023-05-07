@@ -263,17 +263,6 @@
                     android:contentDescription="@string/main_light"
                     android:src="@drawable/baseline_lightbulb_24" />
 
-                <androidx.appcompat.widget.SwitchCompat
-                    android:id="@+id/btn_light"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="6dp"
-                    android:textOff="@string/off"
-                    android:textOn="@string/on"
-                    android:thumb="@drawable/thumb"
-                    app:track="@drawable/track" />
-
                 <TextView
                     android:id="@+id/device_name3"
                     android:layout_width="wrap_content"
@@ -284,7 +273,16 @@
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
-
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/btn_light"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_alignParentEnd="true"
+                    android:textOff="@string/off"
+                    android:textOn="@string/on"
+                    android:thumb="@drawable/thumb"
+                    app:track="@drawable/track" />
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
@@ -407,6 +405,8 @@
         </RelativeLayout>
 
     </LinearLayout>
+
+
 
 
 </LinearLayout>
