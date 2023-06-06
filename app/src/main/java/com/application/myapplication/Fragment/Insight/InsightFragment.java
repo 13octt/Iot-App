@@ -13,6 +13,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.application.myapplication.R;
 
@@ -41,10 +43,9 @@ public class InsightFragment extends Fragment {
                 Toast.makeText(getContext(), selectedItem.toString(), Toast.LENGTH_SHORT).show();
                 Log.d("ITEM", selectedItem.toString());
                 if (selectedItem.equals("1. Temperature Chart")) {
-                    Fragment fragment = new TempChartFragment();
-                    getChildFragmentManager().beginTransaction()
-                            .replace(R.id.container_insight, fragment)
-                            .commit();
+                    switchFragment(new TempChartFragment());
+                } else if (selectedItem.equals("2. Humidity Chart")) {
+                    switchFragment(new HumidityChartFragment());
                 }
             }
 
@@ -52,6 +53,13 @@ public class InsightFragment extends Fragment {
 
 
         return view;
+    }
+
+    private void switchFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getChildFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.container_insight, fragment);
+        fragmentTransaction.commit();
     }
 
 }

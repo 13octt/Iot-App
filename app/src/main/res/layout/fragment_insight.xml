@@ -27,9 +27,9 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <View
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:id="@+id/container_insight"
         android:layout_below="@id/text_input_layout"
         android:layout_marginStart="20dp"

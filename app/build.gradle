@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.application.myapplication"
-        minSdk 21
+        minSdk 23
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -69,5 +69,10 @@ dependencies {
 
     // MP Chart
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    // Chip Navigation Bar
+    implementation 'com.github.ismaeldivita:chip-navigation-bar:1.4.0'
+
+
 
 }
