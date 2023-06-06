@@ -8,12 +8,12 @@
     <item
         android:id="@+id/action_camera"
         android:title=""
-        android:icon="@drawable/vector_camera" />
+        android:icon="@drawable/ic_cctv" />
 
     <item
         android:id="@+id/action_profile"
         android:title=""
-        android:icon="@drawable/vector_profile" />
+        android:icon="@drawable/ic_profile" />
 
     <item
         android:id="@+id/action_setting"

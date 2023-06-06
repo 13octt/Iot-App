@@ -12,16 +12,18 @@
     <LinearLayout
         android:id="@+id/linear_header"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal">
+        android:layout_height="52dp"
+        android:background="@color/custom_gray"
+
+        android:orientation="horizontal"
+        android:padding="6dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_img"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="20dp"
-            android:src="@drawable/ronaldo" />
+            android:src="@drawable/ic_avatar" />
 
         <RelativeLayout
             android:id="@+id/relative_info"
@@ -34,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:text="@string/welcome_home"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="12sp" />
 
             <TextView
@@ -44,7 +46,7 @@
                 android:layout_below="@id/txt_welcome_home"
                 android:layout_marginStart="5dp"
                 android:text="@string/cristiano"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -53,39 +55,42 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="8dp"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true">
+                android:layout_centerVertical="true"
+                tools:ignore="UselessParent">
 
                 <ImageButton
                     android:id="@+id/notification_img_btn"
                     android:layout_width="44dp"
                     android:layout_height="match_parent"
+                    android:layout_marginEnd="12dp"
                     android:background="#EAEAEA"
+                    android:backgroundTint="@color/custom_gray"
                     android:contentDescription="@string/notify"
-
-                    android:src="@drawable/baseline_notifications_24"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_notification"
                     tools:ignore="TouchTargetSizeCheck" />
 
                 <ImageButton
                     android:id="@+id/btn_log_out"
-                    android:layout_width="wrap_content"
+                    android:layout_width="44dp"
                     android:layout_height="wrap_content"
                     android:background="#EAEAEA"
+                    android:backgroundTint="@color/custom_gray"
                     android:contentDescription="@string/log_out"
-                    android:src="@drawable/baseline_logout_24"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_logout"
                     tools:ignore="TouchTargetSizeCheck" />
             </LinearLayout>
         </RelativeLayout>
     </LinearLayout>
 
-
-    <!--    Bottom Navigation Bar   -->
     <RelativeLayout
         android:id="@+id/relative_bottom_nav"
         android:layout_width="match_parent"
@@ -98,7 +103,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="0dp"
             app:itemBackground="@color/custom_gray"
-            app:itemIconTint="#4B79A1"
+            app:itemIconTint="@color/white"
             app:itemTextColor="@color/white"
             app:labelVisibilityMode="unlabeled"
             app:menu="@menu/bottom_navigation" />
