@@ -2,22 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/action_home"
-        android:title="@string/home"
+        android:title=""
         android:icon="@drawable/vector_home" />
 
     <item
         android:id="@+id/action_camera"
-        android:title="@string/camera"
+        android:title=""
         android:icon="@drawable/vector_camera" />
 
     <item
         android:id="@+id/action_profile"
-        android:title="@string/visualize"
+        android:title=""
         android:icon="@drawable/vector_profile" />
 
     <item
         android:id="@+id/action_setting"
-        android:title="@string/setting"
+        android:title=""
         android:icon="@drawable/baseline_settings_24" />
 
 </menu>

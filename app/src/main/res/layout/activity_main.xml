@@ -59,8 +59,8 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_alignParentEnd="true">
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true">
 
                 <ImageButton
                     android:id="@+id/notification_img_btn"
@@ -85,7 +85,6 @@
     </LinearLayout>
 
 
-
     <!--    Bottom Navigation Bar   -->
     <RelativeLayout
         android:id="@+id/relative_bottom_nav"
@@ -98,11 +97,10 @@
             android:layout_height="65dp"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="0dp"
-            android:background="@color/gray"
-            app:itemBackground="@color/gray"
-            app:itemIconTint="@color/white"
+            app:itemBackground="@color/custom_gray"
+            app:itemIconTint="#4B79A1"
             app:itemTextColor="@color/white"
-            app:labelVisibilityMode="labeled"
+            app:labelVisibilityMode="unlabeled"
             app:menu="@menu/bottom_navigation" />
     </RelativeLayout>
 </LinearLayout>

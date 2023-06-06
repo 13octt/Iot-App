@@ -10,4 +10,8 @@
     <color name="gray">#888F97</color>
     <color name="extra_blue">#12283D</color>
 
+    <color name="custom_gray">#283E51</color>
+    <color name="light_gray">#385772</color>
+
+
 </resources>
