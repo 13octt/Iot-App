@@ -5,9 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".Fragment.Insight.HumidityChartFragment">
 
-    <androidx.cardview.widget.CardView
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/chart_humidity"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:backgroundTint="@color/black"/>
+        />
 
 </RelativeLayout>

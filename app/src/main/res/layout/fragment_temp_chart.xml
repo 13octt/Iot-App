@@ -3,15 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.Insight.TempChartFragment"
-    android:background="@color/white">
+    android:background="@color/light_gray"
+    tools:context=".Fragment.Insight.TempChartFragment">
 
-    <androidx.viewpager.widget.ViewPager
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/chart_temperature"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 </RelativeLayout>
