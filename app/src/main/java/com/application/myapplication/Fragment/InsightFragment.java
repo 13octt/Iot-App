@@ -89,7 +89,6 @@ public class InsightFragment extends Fragment {
             }
         });
 
-
         return view;
     }
 
