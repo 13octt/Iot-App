@@ -13,7 +13,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.application.myapplication.Fragment.CameraFragment;
 import com.application.myapplication.Fragment.HomeFragment;
-import com.application.myapplication.Fragment.InsightFragment;
+import com.application.myapplication.Fragment.Insight.InsightFragment;
 import com.application.myapplication.Fragment.SettingFragment;
 import com.application.myapplication.User.SplashActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;

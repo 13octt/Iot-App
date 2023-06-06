@@ -3,38 +3,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.InsightFragment"
-    android:background="@drawable/gradient_background">
+    android:background="@drawable/gradient_background"
+    tools:context=".Fragment.Insight.InsightFragment">
 
-        <Spinner
-            android:id="@+id/spinner"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:hint="@string/chart"
+        android:textColorHint="@color/white">
+
+        <AutoCompleteTextView
+            android:id="@+id/filled_exposed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:layout_margin="16dp"
-            android:padding="16dp"
-            android:spinnerMode="dropdown" />
+            android:inputType="none"
+            android:text="@string/spinner"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            tools:ignore="LabelFor"/>
 
-<!--        <com.google.android.material.textfield.TextInputLayout-->
-<!--            style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_margin="80dp"-->
-<!--            android:hint="@string/chart">-->
+    </com.google.android.material.textfield.TextInputLayout>
 
-<!--            <AutoCompleteTextView-->
-<!--                android:id="@+id/filled_exposed"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Spinner"-->
-<!--                android:inputType="none"-->
-<!--                android:textSize="28sp"-->
-<!--                android:textColor="@color/black"-->
-<!--                tools:ignore="LabelFor">-->
-
-<!--            </AutoCompleteTextView>-->
-
-<!--        </com.google.android.material.textfield.TextInputLayout>-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/container_insight"
+        android:layout_below="@id/text_input_layout"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="80dp" />
 
 
 </RelativeLayout>
