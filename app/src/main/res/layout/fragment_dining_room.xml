@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".Fragment.Home.BedRoomFragment">
+    tools:context=".Fragment.Home.DiningRoomFragment">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -21,10 +21,10 @@
             tools:ignore="UselessParent">
 
             <androidx.cardview.widget.CardView
+                app:cardCornerRadius="15dp"
                 android:layout_width="170dp"
                 android:layout_height="106dp"
-                android:backgroundTint="#EAEAEA"
-                app:cardCornerRadius="15dp">
+                android:backgroundTint="#EAEAEA">
 
                 <View
                     android:layout_width="match_parent"
@@ -47,14 +47,14 @@
 
                     <androidx.appcompat.widget.SwitchCompat
                         android:id="@+id/btn_lamp"
+                        app:track="@drawable/track"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_marginEnd="6dp"
                         android:textOff="@string/off"
                         android:textOn="@string/on"
-                        android:thumb="@drawable/thumb"
-                        app:track="@drawable/track" />
+                        android:thumb="@drawable/thumb" />
 
                     <TextView
                         android:id="@+id/device_name"
@@ -74,12 +74,12 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                app:cardCornerRadius="15dp"
                 android:layout_width="170dp"
                 android:layout_height="106dp"
                 android:layout_alignParentEnd="true"
                 android:background="@drawable/border_cardview"
-                android:backgroundTint="#888F97"
-                app:cardCornerRadius="15dp">
+                android:backgroundTint="#888F97">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -97,14 +97,14 @@
 
                     <androidx.appcompat.widget.SwitchCompat
                         android:id="@+id/btn_tv"
+                        app:track="@drawable/track"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_marginEnd="6dp"
                         android:textOff="@string/off"
                         android:textOn="@string/on"
-                        android:thumb="@drawable/thumb"
-                        app:track="@drawable/track" />
+                        android:thumb="@drawable/thumb" />
 
                     <TextView
                         android:id="@+id/device_television"
@@ -138,10 +138,10 @@
             android:layout_marginBottom="26dp">
 
             <androidx.cardview.widget.CardView
+                app:cardCornerRadius="15dp"
                 android:layout_width="170dp"
                 android:layout_height="106dp"
-                android:backgroundTint="#888F97"
-                app:cardCornerRadius="15dp">
+                android:backgroundTint="#888F97">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -160,14 +160,14 @@
 
                     <androidx.appcompat.widget.SwitchCompat
                         android:id="@+id/btn_ac"
+                        app:track="@drawable/track"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_marginEnd="6dp"
                         android:textOff="@string/off"
                         android:textOn="@string/on"
-                        android:thumb="@drawable/thumb"
-                        app:track="@drawable/track" />
+                        android:thumb="@drawable/thumb" />
 
                     <TextView
                         android:id="@+id/device_name2"
@@ -187,12 +187,12 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                app:cardCornerRadius="15dp"
                 android:layout_width="170dp"
                 android:layout_height="106dp"
                 android:layout_alignParentEnd="true"
                 android:background="@drawable/border_cardview"
-                android:backgroundTint="#888F97"
-                app:cardCornerRadius="15dp">
+                android:backgroundTint="#888F97">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -211,14 +211,14 @@
 
                     <androidx.appcompat.widget.SwitchCompat
                         android:id="@+id/btn_fan"
+                        app:track="@drawable/track"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_marginEnd="6dp"
                         android:textOff="@string/off"
                         android:textOn="@string/on"
-                        android:thumb="@drawable/thumb"
-                        app:track="@drawable/track" />
+                        android:thumb="@drawable/thumb" />
 
                     <TextView
                         android:id="@+id/device_fan"
@@ -253,10 +253,10 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_view_main_light"
+            app:cardCornerRadius="15dp"
             android:layout_width="170dp"
             android:layout_height="106dp"
-            android:backgroundTint="#888F97"
-            app:cardCornerRadius="15dp">
+            android:backgroundTint="#888F97">
 
             <RelativeLayout
                 android:id="@+id/relative_main_light"
@@ -276,14 +276,14 @@
 
                 <androidx.appcompat.widget.SwitchCompat
                     android:id="@+id/btn_light"
+                    app:track="@drawable/track"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="6dp"
                     android:textOff="@string/off"
                     android:textOn="@string/on"
-                    android:thumb="@drawable/thumb"
-                    app:track="@drawable/track" />
+                    android:thumb="@drawable/thumb" />
 
                 <TextView
                     android:id="@+id/device_name3"
@@ -318,10 +318,10 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_view_temp"
+                app:cardCornerRadius="15dp"
                 android:layout_width="170dp"
                 android:layout_height="106dp"
-                android:backgroundTint="#888F97"
-                app:cardCornerRadius="15dp">
+                android:backgroundTint="#888F97">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -352,12 +352,12 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/temperature_value_bed_room"
+                        android:id="@+id/temperature_value_text_view"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_below="@id/img_temp"
                         android:layout_centerHorizontal="true"
-                        android:text="@string/_25_c"
+                        android:text="@string/_24_c"
                         android:textColor="@color/white"
                         android:textSize="32sp"
                         android:textStyle="bold" />
@@ -370,12 +370,12 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_view_humidity"
+                app:cardCornerRadius="15dp"
                 android:layout_width="170dp"
                 android:layout_height="106dp"
                 android:layout_alignParentEnd="true"
                 android:background="@drawable/border_cardview"
-                android:backgroundTint="#888F97"
-                app:cardCornerRadius="15dp">
+                android:backgroundTint="#888F97">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -405,18 +405,26 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/humidity_value_bed_room"
+                        android:id="@+id/humidity_value_text_view"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_below="@id/img_humidity"
                         android:layout_centerHorizontal="true"
-                        android:text="@string/_50"
+                        android:text="@string/_80"
                         android:textColor="@color/white"
                         android:textSize="32sp"
                         android:textStyle="bold" />
 
+
                 </RelativeLayout>
+
+
             </androidx.cardview.widget.CardView>
+
+
         </RelativeLayout>
+
     </LinearLayout>
+
+
 </LinearLayout>

@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
+    android:background="@drawable/gradient_background"
     android:padding="20dp"
     tools:context=".User.SignInActivity">
 
@@ -16,7 +17,7 @@
         android:imeOptions="actionNext"
         android:inputType="textEmailAddress"
         android:maxLength="100"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="22sp" />
 
     <EditText
@@ -27,14 +28,16 @@
         android:imeOptions="actionDone"
         android:inputType="textPassword"
         android:maxLength="100"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="22sp" />
 
     <Button
         android:id="@+id/btn_sign_in"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/custom_gray"
         android:layout_marginTop="30dp"
+        android:textColor="@color/white"
         android:text="@string/sign_in" />
 
     <LinearLayout

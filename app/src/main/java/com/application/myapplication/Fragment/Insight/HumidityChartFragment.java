@@ -79,7 +79,7 @@ public class HumidityChartFragment extends Fragment {
 
                         //Legend
                         Legend legend = chartHumidity.getLegend();
-                        legend.setTextColor(Color.WHITE);
+                        legend.setTextColor(Color.BLACK);
                         legend.setTextSize(16f);
 
                         dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
@@ -109,8 +109,8 @@ public class HumidityChartFragment extends Fragment {
                         chartHumidity.getAxisLeft().setAxisMinimum(0f);
                         chartHumidity.getAxisRight().setAxisMaximum(100f);
                         chartHumidity.getAxisRight().setAxisMinimum(0f);
-                        chartHumidity.getAxisLeft().setTextColor(Color.WHITE);
-                        chartHumidity.getAxisRight().setTextColor(Color.WHITE);
+                        chartHumidity.getAxisLeft().setTextColor(Color.BLACK);
+                        chartHumidity.getAxisRight().setTextColor(Color.BLACK);
 
                         List<String> xValues = new ArrayList<>();
                         xValues.add("Mon");

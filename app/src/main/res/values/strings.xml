@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Smart home</string>
     <string name="ho_chi_minh">Ho Chi Minh</string>
     <string name="welcome_home">Welcome Home</string>
     <string name="cristiano">Cristiano</string>
@@ -36,11 +36,16 @@
     <string name="temperature">Temperature</string>
     <string name="humidity">Humidity</string>
     <string name="_25_c">25°C</string>
+    <string name="_24_c">24°C</string>
     <string name="_50">50%</string>
+    <string name="_80">80%</string>
     <string name="visualize">Visualize</string>
     <string name="setting">Setting</string>
     <string name="dashboard">Dashboard</string>
     <string name="chart">Chart</string>
     <string name="spinner">Spinner</string>
     <string name="dining_room">Dining Room</string>
+    <string name="your_username">Your username</string>
+    <string name="status">Status</string>
+    <string name="status_image">status_image</string>
 </resources>

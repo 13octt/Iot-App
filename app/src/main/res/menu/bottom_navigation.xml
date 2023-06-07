@@ -13,7 +13,7 @@
     <item
         android:id="@+id/action_profile"
         android:title=""
-        android:icon="@drawable/ic_profile" />
+        android:icon="@drawable/ic_chart" />
 
     <item
         android:id="@+id/action_setting"

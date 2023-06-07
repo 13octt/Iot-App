@@ -89,7 +89,7 @@ public class TempChartFragment extends Fragment {
 
                         //Legend
                         Legend legend = chartTemperature.getLegend();
-                        legend.setTextColor(Color.WHITE);
+                        legend.setTextColor(Color.BLACK);
                         legend.setTextSize(16f);
 
                         // Gradient color cho graph
@@ -127,7 +127,7 @@ public class TempChartFragment extends Fragment {
                         chartTemperature.getAxisRight().setAxisMinimum(-2f);
 
                         chartTemperature.getXAxis().setTextSize(16f);
-                        chartTemperature.getAxisLeft().setTextColor(Color.WHITE);
+                        chartTemperature.getAxisLeft().setTextColor(Color.BLACK);
                         chartTemperature.getAxisLeft().setTextSize(16f);
                         chartTemperature.getAxisRight().setTextSize(12f);
                         chartTemperature.getAxisRight().setDrawLabels(false);

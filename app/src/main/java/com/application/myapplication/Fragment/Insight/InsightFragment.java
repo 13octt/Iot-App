@@ -45,8 +45,6 @@ public class InsightFragment extends Fragment {
         return view;
     }
 
-
-
     private void switchFragment(Fragment fragment) {
         FragmentManager fragmentManager = getChildFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

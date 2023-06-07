@@ -1,46 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
+    android:orientation="vertical"
     tools:context=".Fragment.Insight.InsightFragment">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/text_input_layout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/gray_cus_light"
-        android:layout_margin="20dp"
-        android:hint="@string/chart"
-        android:textColorHint="@color/black">
+        android:background="@color/light_gray">
 
-        <AutoCompleteTextView
-            android:id="@+id/filled_exposed"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="none"
-            android:text="@string/chart"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
+            android:layout_margin="20dp"
+            android:background="@color/white"
+            android:hint="@string/chart"
+            android:textColorHint="@color/black">
 
-            android:textSize="28sp"
-            tools:ignore="LabelFor" />
+            <AutoCompleteTextView
+                android:id="@+id/filled_exposed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:text="@string/chart"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:shadowColor="@color/black"
+                android:background="@color/white"
+                android:textSize="20sp"
+                tools:ignore="LabelFor" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </RelativeLayout>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/container_insight"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/text_input_layout"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:backgroundTint="@color/custom_gray"
         android:layout_marginBottom="80dp">
 
     </androidx.cardview.widget.CardView>
 
-</RelativeLayout>
+</LinearLayout>
