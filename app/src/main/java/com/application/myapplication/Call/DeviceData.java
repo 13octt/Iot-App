@@ -1,4 +1,4 @@
-package com.application.myapplication;
+package com.application.myapplication.Call;
 
 public class DeviceData {
     String _id;

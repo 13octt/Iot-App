@@ -11,9 +11,10 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/gray_cus_light"
         android:layout_margin="20dp"
         android:hint="@string/chart"
-        android:textColorHint="@color/white">
+        android:textColorHint="@color/black">
 
         <AutoCompleteTextView
             android:id="@+id/filled_exposed"
@@ -21,7 +22,9 @@
             android:layout_height="wrap_content"
             android:inputType="none"
             android:text="@string/chart"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+
             android:textSize="28sp"
             tools:ignore="LabelFor" />
 

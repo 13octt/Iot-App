@@ -20,10 +20,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="out_door">Outdoor</string>
-    <string name="bed_room">Bedroom</string>
-    <string name="bathroom">Bathroom</string>
+    <string name="bed_room">Bed Room</string>
+    <string name="bathroom">Bath Room</string>
     <string name="outdoor">Outdoor</string>
-    <string name="bedroom">Bedroom</string>
+    <string name="bedroom">Bed room</string>
     <string name="cctv">CCTV</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
@@ -42,4 +42,5 @@
     <string name="dashboard">Dashboard</string>
     <string name="chart">Chart</string>
     <string name="spinner">Spinner</string>
+    <string name="dining_room">Dining Room</string>
 </resources>

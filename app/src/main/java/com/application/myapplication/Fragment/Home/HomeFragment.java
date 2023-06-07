@@ -1,13 +1,16 @@
-package com.application.myapplication.Fragment;
+package com.application.myapplication.Fragment.Home;
 
 import static android.service.controls.ControlsProviderService.TAG;
 
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -17,16 +20,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.application.myapplication.R;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.jjoe64.graphview.GraphView;
-import com.jjoe64.graphview.LegendRenderer;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
@@ -40,6 +40,9 @@ import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 
 public class HomeFragment extends Fragment {
+    private TextView bedRoom, livingRoom, diningRoom;
+    LinearLayout linearLayout;
+    private int selectTabNumber = 1;
     private int flagLamp = 0, flagTV = 0, flagAC = 0, flagFan = 0, flagLight = 0;
     Button btnLamp, btnTV, btnAC, btnFan, btnLight;
     private MqttAndroidClient mqttAndroidClient;
@@ -54,14 +57,6 @@ public class HomeFragment extends Fragment {
     private LineGraphSeries<DataPoint> mTemperatureSeries;
     private LineGraphSeries<DataPoint> mHumiditySeries;
 
-    public HomeFragment() {
-        // Required empty public constructor
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -74,7 +69,6 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // Initialize UI function
         initUI();
 
         String serverUri = "tcp://35.222.45.221:1883";
@@ -115,15 +109,97 @@ public class HomeFragment extends Fragment {
         // Monitor Device Function
         monitorDevices();
 
-        // Show temp dialog
-        temp.setOnClickListener(view1 -> {
-            showDialog(getLayoutInflater().inflate(R.layout.activity_temp_bottom_sheet, null));
+        switchFragment(new BedRoomFragment());
+
+        bedRoom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selectTab(1);
+            }
+        });
+        livingRoom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selectTab(2);
+            }
+        });
+        diningRoom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selectTab(3);
+            }
         });
 
-        // Show humidity dialog
-        humidity.setOnClickListener(view1 -> {
-            showDialog(getLayoutInflater().inflate(R.layout.activity_humi_bottom_sheet, null));
+    }
+
+    private void selectTab(int tabNumber) {
+        TextView selectedTextView = null;
+        TextView nonSelectedTextView1 = null;
+        TextView nonSelectedTextView2 = null;
+
+        if(tabNumber == 1){
+            selectedTextView = bedRoom;
+            nonSelectedTextView1 = livingRoom;
+            nonSelectedTextView2 = diningRoom;
+            switchFragment(new BedRoomFragment());
+        } else if (tabNumber == 2) {
+            nonSelectedTextView1 = bedRoom;
+            selectedTextView = livingRoom;
+            nonSelectedTextView2 = diningRoom;
+            switchFragment(new LivingRoomFragment());
+        } else if (tabNumber == 3) {
+            nonSelectedTextView1 = bedRoom;
+            nonSelectedTextView2 = livingRoom;
+            selectedTextView = diningRoom;
+            switchFragment(new DinningRoomFragment());
+        }
+
+        float slideTo = (tabNumber - selectTabNumber) * selectedTextView.getWidth();
+        TranslateAnimation translateAnimation = new TranslateAnimation(0, slideTo, 0, 0);
+        translateAnimation.setDuration(100);
+        if(selectTabNumber == 1){
+            bedRoom.startAnimation(translateAnimation);
+        } else if (selectTabNumber == 2) {
+            livingRoom.startAnimation(translateAnimation);
+
+        } else if (selectTabNumber == 3) {
+            diningRoom.startAnimation(translateAnimation);
+
+        }
+
+        TextView finalSelectedTextView = selectedTextView;
+        TextView finalNonSelectedTextView1 = nonSelectedTextView1;
+        TextView finalNonSelectedTextView2 = nonSelectedTextView2;
+
+        translateAnimation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                linearLayout.setBackgroundResource(R.drawable.border_light_white);
+                finalSelectedTextView.setBackgroundResource(R.drawable.border_cardview);
+                finalSelectedTextView.setTypeface(null, Typeface.BOLD);
+                finalSelectedTextView.setTextColor(Color.BLACK);
+
+                finalNonSelectedTextView1.setBackgroundResource(R.drawable.border_light_white_0);
+                finalNonSelectedTextView1.setTypeface(null, Typeface.NORMAL);
+
+
+                finalNonSelectedTextView2.setBackgroundResource(R.drawable.border_light_white_0);
+                finalNonSelectedTextView2.setTypeface(null, Typeface.NORMAL);
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
         });
+
+        selectTabNumber = tabNumber;
     }
 
     private void initUI() {
@@ -134,6 +210,14 @@ public class HomeFragment extends Fragment {
         btnLight = getView().findViewById(R.id.btn_light);
         temp = getView().findViewById(R.id.card_view_temp);
         humidity = getView().findViewById(R.id.card_view_humidity);
+
+        bedRoom = getView().findViewById(R.id.bed_room_tab);
+        livingRoom = getView().findViewById(R.id.living_room_tab);
+        diningRoom = getView().findViewById(R.id.dining_room_tab);
+
+        linearLayout = getView().findViewById(R.id.linear_main_light);
+
+
     }
 
     public void connectToMQTTBroker() {
@@ -142,8 +226,8 @@ public class HomeFragment extends Fragment {
             String password = "thanhduy";
 
             MqttConnectOptions mqttConnectOptions = new MqttConnectOptions();
-            mqttConnectOptions.setAutomaticReconnect(true);     //
-            mqttConnectOptions.setCleanSession(true);       //
+            mqttConnectOptions.setAutomaticReconnect(true);
+            mqttConnectOptions.setCleanSession(true);
             mqttConnectOptions.setUserName(username);
             mqttConnectOptions.setPassword(password.toCharArray());
             IMqttToken token = mqttAndroidClient.connect(mqttConnectOptions);
@@ -169,7 +253,6 @@ public class HomeFragment extends Fragment {
     }
 
     public void subscribeToTopic(String topic) {
-//        String topic = "SENSORS";
         int qos = 1;
         try {
             IMqttToken subToken = mqttAndroidClient.subscribe(topic, qos);
@@ -277,11 +360,21 @@ public class HomeFragment extends Fragment {
         super.onStart();
     }
 
-//    private void onClickFragment(Fragment fragment) {
-//        FragmentManager fragmentManager = getParentFragmentManager();
-//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-////        fragmentTransaction.replace(R.id.linear_iot_room, fragment);
-//
-//    }
+
+    private void callTemp() {
+
+    }
+
+    private void callHumidity() {
+
+    }
+
+    private void switchFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getChildFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container_home, fragment);
+        fragmentTransaction.commit();
+    }
+
 
 }

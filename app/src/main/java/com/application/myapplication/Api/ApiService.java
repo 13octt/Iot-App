@@ -1,6 +1,6 @@
-package com.application.myapplication.Adapter;
+package com.application.myapplication.Api;
 
-import com.application.myapplication.DeviceData;
+import com.application.myapplication.Call.DeviceData;
 
 import java.util.List;
 

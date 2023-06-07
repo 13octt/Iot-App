@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.application.myapplication.Adapter.ApiService;
-import com.application.myapplication.ApiRetrofit;
-import com.application.myapplication.DeviceData;
+import com.application.myapplication.Api.ApiService;
+import com.application.myapplication.Api.ApiRetrofit;
+import com.application.myapplication.Call.DeviceData;
 import com.application.myapplication.R;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.Legend;
