@@ -11,8 +11,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.application.myapplication.Api.ApiService;
 import com.application.myapplication.Api.ApiRetrofit;
+import com.application.myapplication.Api.ApiService;
 import com.application.myapplication.Call.DeviceData;
 import com.application.myapplication.R;
 import com.github.mikephil.charting.charts.LineChart;
@@ -46,17 +46,18 @@ public class TempChartFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_temp_chart, container, false);
 
         chartTemperature = view.findViewById(R.id.chart_temperature);
-        timer = new Timer();
-        TimerTask timerTask = new TimerTask() {
-            @Override
-            public void run() {
-                callTempChartApi();
-
-            }
-        };
-        timer.schedule(timerTask, 0, 5000);
+                timer = new Timer();
+                TimerTask timerTask = new TimerTask() {
+                    @Override
+                    public void run() {
+                        callTempChartApi();
+                    }
+                };
+                timer.schedule(timerTask, 0, 5000);
+//        callTempChartApi();
 
         return view;
+
 
     }
 

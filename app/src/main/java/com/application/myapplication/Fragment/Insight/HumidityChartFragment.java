@@ -47,7 +47,6 @@ public class HumidityChartFragment extends Fragment {
             @Override
             public void run() {
                 callHumidityChartApi();
-
             }
         };
         timer.schedule(timerTask, 0, 5000);

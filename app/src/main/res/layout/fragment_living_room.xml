@@ -46,7 +46,7 @@
                         android:src="@drawable/ic_light_1" />
 
                     <androidx.appcompat.widget.SwitchCompat
-                        android:id="@+id/btn_lamp"
+                        android:id="@+id/btn_lamp_living_room"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
