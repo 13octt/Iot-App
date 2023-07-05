@@ -10,9 +10,12 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -75,7 +78,7 @@ public class CameraFragment extends Fragment {
     Context context;
     public  String message;
     String receiveMessage;
-
+    public ImageView photo;
     public CameraFragment() {
     }
  public View view;
@@ -113,6 +116,7 @@ public class CameraFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_camera, container, false);
         // REFERENCE UI
         //tempValue = view.findViewById(R.id.receiver);
+        photo = view.findViewById(R.id.receive_photo);
 
         //humidityValue = view.findViewById(R.id.sender);
         send_mess = view.findViewById(R.id.sender);
@@ -120,7 +124,8 @@ public class CameraFragment extends Fragment {
         button_send = view.findViewById(R.id.btn_send_mess);
         rec_mess = view.findViewById(R.id.receiver);
         message = rec_mess.getText().toString();
-        receiveMessage = rec_mess.toString();
+
+
         button_send.setOnClickListener(clickView -> {
             // Gọi phương thức publishMessage với các tham số cụ thể
             message = edit_text_mqtt.getText().toString();
@@ -208,8 +213,15 @@ public class CameraFragment extends Fragment {
                 }
                 else {
                     if(topic.equals("photo")){
-                        ImageView photo = view.findViewById(R.id.receive_photo);
 
+                        byte[] decodedString = Base64.decode(payload, Base64.DEFAULT);
+                        Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+                        int desiredWidth = decodedByte.getWidth() * 2; // Phóng to gấp đôi chiều rộng
+                        int desiredHeight = decodedByte.getHeight() * 2; // Phóng to gấp đôi chiều cao
+
+// Create the scaled bitmap
+                        Bitmap scaledBitmap = Bitmap.createScaledBitmap(decodedByte, desiredWidth, desiredHeight, false);
+                        photo.setImageBitmap(scaledBitmap);
                     }
                 }
 
