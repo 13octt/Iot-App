@@ -71,9 +71,11 @@ public class CameraFragment extends Fragment {
     private boolean isDangerous = false;
     private Vibrator vibrator;
     String serverUri = "tcp://35.239.121.30:1883";
-    String clientId = "SMART_HOME";
+    String clientId = "SMART_HOME_IOT";
     Context context;
     public  String message;
+    String receiveMessage;
+
     public CameraFragment() {
     }
  public View view;
@@ -117,7 +119,8 @@ public class CameraFragment extends Fragment {
         edit_text_mqtt = view.findViewById(R.id.edit_text_mqtt);
         button_send = view.findViewById(R.id.btn_send_mess);
         rec_mess = view.findViewById(R.id.receiver);
-
+        message = rec_mess.getText().toString();
+        receiveMessage = rec_mess.toString();
         button_send.setOnClickListener(clickView -> {
             // Gọi phương thức publishMessage với các tham số cụ thể
             message = edit_text_mqtt.getText().toString();
@@ -133,11 +136,6 @@ public class CameraFragment extends Fragment {
         return view;
     }
 
-
-
-
-
-
     public void connectToMQTTBroker(View view) {
         try {
             String username = "duy";
@@ -152,7 +150,7 @@ public class CameraFragment extends Fragment {
             token.setActionCallback(new IMqttActionListener() {
                 @Override
                 public void onSuccess(IMqttToken asyncActionToken) {
-                    Log.d("MQTT", "Connect to Broker Successfully");
+                    Log.d("MQTT cam", "Connect to Broker Successfully");
 
                     subscribeToTopic("speechtotext",view);
                     subscribeToTopic("photo",view);
@@ -202,15 +200,14 @@ public class CameraFragment extends Fragment {
             @Override
             public void messageArrived(String topic, MqttMessage message) throws Exception {
                 // Xử lý message được gửi đến topic đã đăng ký
-                String payload = new String(message.getPayload());
-
-                if(topic == "speechtotext"){
+                String payload = message.toString();
+                Log.d("abc", payload);
+                if(topic.equals("speechtotext")){
                     rec_mess.setText(payload);
-                    Log.d("text",  rec_mess.getText().toString());
 
                 }
                 else {
-                    if(topic == "photo"){
+                    if(topic.equals("photo")){
                         ImageView photo = view.findViewById(R.id.receive_photo);
 
                     }

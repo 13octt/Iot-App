@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -47,10 +49,30 @@ public class MessageFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_message, container, false);
         sendMessage = view.findViewById(R.id.et_send_message);
+//        sendMessage.requestFocus();
+//        InputMethodManager imm = (InputMethodManager) requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+//        imm.showSoftInput(sendMessage, InputMethodManager.SHOW_IMPLICIT);
+        requireActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE | WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+
+        // Set a focus change listener for the EditText
+        sendMessage.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    // Scroll the EditText into view when it gains focus
+                    sendMessage.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            sendMessage.requestFocus();
+                            InputMethodManager imm = (InputMethodManager) requireContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                            imm.showSoftInput(sendMessage, InputMethodManager.SHOW_IMPLICIT);
+                        }
+                    });
+                }
+            }
+        });
         btnSend = view.findViewById(R.id.floating_btn);
         sendTxt = view.findViewById(R.id.txt_sender);
-        sendText = sendTxt.toString();
-        message = sendMessage.getText().toString();
         mqttAndroidClient = new MqttAndroidClient(context, serverUri, clientId, Ack.AUTO_ACK);
         connectToMQTTBroker();
 
@@ -71,6 +93,7 @@ public class MessageFragment extends Fragment {
             public void onSuccess(IMqttToken asyncActionToken) {
                 Log.d("MQTT", "Connect to Broker Successfully");
                 btnSend.setOnClickListener(view ->{
+                    message = sendMessage.getText().toString();
                     publishMessage("SEND", message, 0);
                     sendTxt.setText(message);
                 });

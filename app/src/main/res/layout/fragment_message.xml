@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gray_cus_light"
+    android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context=".Fragment.Message.MessageFragment">
 
@@ -39,11 +40,16 @@
             android:layout_margin="5dp"
             android:layout_weight="0.8"
             android:autofillHints="Hello"
+            android:windowSoftInputMode="adjustPan"
+
             android:background="@drawable/edittext_background"
-            android:inputType="none"
+            android:inputType="textCapSentences|textMultiLine"
+            android:maxLength="2000"
+            android:maxLines="8"
+            android:layout_alignParentBottom="true"
             android:paddingStart="5dp"
             android:text="@string/hello"
-            tools:ignore="LabelFor,RtlSymmetry" />
+            tools:ignore="LabelFor,ObsoleteLayoutParam,RtlSymmetry" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floating_btn"

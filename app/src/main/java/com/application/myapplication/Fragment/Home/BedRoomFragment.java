@@ -64,7 +64,7 @@ public class BedRoomFragment extends Fragment {
     private boolean isDangerous = false;
     private Vibrator vibrator;
     String serverUri = "tcp://35.239.121.30:1883";
-    String clientId = "SMART_HOME";
+    String clientId = "SMART_HOME_IOT";
     Context context;
 
     public BedRoomFragment() {
