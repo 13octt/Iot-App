@@ -43,8 +43,7 @@ public class VibrationService extends Service {
     private static final int NOTIFICATION_ID = 1;
     private static final String CHANNEL_ID = "AlertChannel";
     private Context context;
-    private String s;
-
+    boolean flag = false;
 
     @Override
     public void onCreate() {
@@ -62,7 +61,8 @@ public class VibrationService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
 
         Notification notification = createNotification();
-
+        flag = false;
+        showDangerNotification();
         // Start the service in the foreground
         startForeground(NOTIFICATION_ID, notification);
 
@@ -116,6 +116,7 @@ public class VibrationService extends Service {
         // Create the notification and set its properties
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle("Alert")
+                .setSound(null)
                 .setContentText("Vibration Service Running")
                 .setSmallIcon(R.drawable.ic_launcher_foreground);
 
@@ -142,7 +143,7 @@ public class VibrationService extends Service {
                         } else if (temp > 38) {
                             showDangerNotification();
                             vibrateDevice();
-                        }
+                        } else showSafeNotification();
                     }
                 }
             }
@@ -162,6 +163,29 @@ public class VibrationService extends Service {
                 .setSmallIcon(R.drawable.ic_launcher_foreground)
                 .setContentTitle("Warning")
                 .setContentText("High temperature and humidity")
+                .setSound(null)
+                .setContentIntent(pendingIntent)
+                .setPriority(NotificationCompat.PRIORITY_HIGH);
+
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            return;
+        }
+        notificationManager.notify(NOTIFICATION_ID, builder.build());
+    }
+
+    private void showSafeNotification() {
+        createNotification();
+        Intent main = new Intent(context, MainActivity.class);
+        main.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, main, PendingIntent.FLAG_MUTABLE);
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                .setContentTitle("Notification")
+                .setContentText("Safe temperature and humidity")
+                .setSound(null)
                 .setContentIntent(pendingIntent)
                 .setPriority(NotificationCompat.PRIORITY_HIGH);
 
