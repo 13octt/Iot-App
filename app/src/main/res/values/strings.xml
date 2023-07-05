@@ -48,4 +48,9 @@
     <string name="your_username">Your username</string>
     <string name="status">Status</string>
     <string name="status_image">status_image</string>
+    <string name="send_edit_text">Send Edit text</string>
+    <string name="enter_your_text_here">Enter your text here</string>
+    <string name="hello">Hello</string>
+    <string name="receiver">Receiver</string>
+    <string name="sender">sender</string>
 </resources>

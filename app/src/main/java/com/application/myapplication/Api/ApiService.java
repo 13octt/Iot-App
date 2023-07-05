@@ -28,4 +28,16 @@ public interface ApiService {
 
     @GET("/led")
     Call<Monitor> getLampState();
+
+//    @PUT("/television")
+//    Call<Void> updateTVState(@Body LedState ledState);
+//
+//    @GET("/television")
+//    Call<Monitor> getTVState();
+//
+//    @PUT("/air_conditioner")
+//    Call<Void> updateACState(@Body LedState ledState);
+//
+//    @GET("/air_conditioner")
+//    Call<Monitor> getACState();
 }
