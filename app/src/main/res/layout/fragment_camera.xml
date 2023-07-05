@@ -18,6 +18,7 @@
         android:textStyle="bold"/>
 
     <ImageView
+        android:id="@+id/receive_photo"
         android:layout_width="wrap_content"
         android:layout_height="267dp"
         android:layout_marginTop="18dp"
@@ -25,13 +26,71 @@
         android:layout_gravity="center"
         />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.9"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/receiver"
+            android:textSize="20sp"
+            android:textColor="#A60024"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/receiver"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sender"
+            android:textSize="20sp"
+            android:textColor="#021686"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sender"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Out door"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        android:layout_gravity="center"
-        android:textStyle="bold"/>
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edit_text_mqtt"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:paddingStart="5dp"
+            android:background="@drawable/edittext_background"
+            android:layout_weight="0.8"
+
+            android:textColor="@color/black"
+            android:inputType="none"
+            tools:ignore="LabelFor,RtlSymmetry" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="80dp"
+            android:id="@+id/btn_send_mess"
+            android:backgroundTint="@color/gray_cus_light"
+            android:contentDescription="@string/send_edit_text"
+            android:elevation="16dp"
+            android:src="@drawable/ic_send"
+            />
+    </LinearLayout>
 
 </LinearLayout>

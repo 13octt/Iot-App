@@ -51,6 +51,6 @@
     <string name="send_edit_text">Send Edit text</string>
     <string name="enter_your_text_here">Enter your text here</string>
     <string name="hello">Hello</string>
-    <string name="receiver">Receiver</string>
-    <string name="sender">sender</string>
+    <string name="receiver">Message Receive:</string>
+    <string name="sender">Message Send:</string>
 </resources>
