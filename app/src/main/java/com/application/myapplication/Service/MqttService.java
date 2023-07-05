@@ -8,6 +8,7 @@ import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Binder;
 import android.os.Build;
 import android.os.IBinder;
 import android.util.Log;
@@ -31,33 +32,71 @@ import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
+import info.mqtt.android.service.Ack;
 import info.mqtt.android.service.MqttAndroidClient;
 
 public class MqttService extends Service {
     private static final String CHANNEL_ID = "mqtt_channel";
     private static final int NOTIFICATION_ID = 1;
     private MqttAndroidClient mqttAndroidClient;
-    String serverUri = "tcp://35.222.45.221:1883";
-    String clientId = "SMART_HOME_IOT";
-    String username = "thanhduy";
-    String password = "thanhduy";
+    private static final String TAG = "MqttService";
+    private MqttAndroidClient mqttClient;
+    private final IBinder binder = new LocalBinder();
     private MqttConnectOptions mqttConnectOptions;
+    Context context;
+    public class LocalBinder extends Binder {
+        MqttService getService() {
+            return MqttService.this;
+        }
+    }
     @Override
     public void onCreate() {
         super.onCreate();
-        startForeground(NOTIFICATION_ID, createNotification());
+        context = this;
+//        startForeground(NOTIFICATION_ID, createNotification());
+        initializeMqttClient();
+        connectToMQTTBroker();
+
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Context context = getApplicationContext();
-        try {
-            connectToMqttBroker(context);
-        } catch (MqttException e) {
-            throw new RuntimeException(e);
-        }
+//        connectAndSubscribe();
         return START_STICKY;
     }
+
+    private void initializeMqttClient() {
+        // Initialize your MQTT client
+        String serverUri = "tcp://35.239.121.30:1883";
+        String clientId = MqttClient.generateClientId();
+//        mqttClient = new MqttAndroidClient(context, serverUri, clientId);
+        mqttAndroidClient = new MqttAndroidClient(context, serverUri, clientId, Ack.AUTO_ACK);
+
+    }
+
+    public void connectToMQTTBroker() {
+        String username = "duy";
+        String password = "duy";
+        MqttConnectOptions mqttConnectOptions = new MqttConnectOptions();
+        mqttConnectOptions.setAutomaticReconnect(true);
+        mqttConnectOptions.setCleanSession(true);
+        mqttConnectOptions.setUserName(username);
+        mqttConnectOptions.setPassword(password.toCharArray());
+        IMqttToken token = mqttAndroidClient.connect(mqttConnectOptions);
+        token.setActionCallback(new IMqttActionListener() {
+            @Override
+            public void onSuccess(IMqttToken asyncActionToken) {
+                Log.d("MQTT", "Connect to Broker Successfully");
+            }
+
+            @Override
+            public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
+                Log.d("MQTT", "Connect Failed");
+            }
+        });
+    }
+
+
 
     @Override
     public void onDestroy() {
@@ -71,88 +110,7 @@ public class MqttService extends Service {
         return null;
     }
 
-//    private void connectToMqttBroker() {
-//        String brokerUrl = "tcp://mqtt.example.com:1883"; // Replace with your MQTT broker URL
-//
-//        try {
-//            IMqttClient mqttClient = new MqttClient(brokerUrl, MqttClient.generateClientId());
-//            MqttConnectOptions connectOptions = new MqttConnectOptions();
-//            connectOptions.setCleanSession(true);
-//
-//            mqttClient.connect(connectOptions);
-//
-//            // Subscribe to MQTT topics or perform other operations after successful connection
-//
-//            mqttClient.setCallback(new MqttCallback() {
-//                @Override
-//                public void connectionLost(Throwable cause) {
-//                    // Handle connection lost
-//                }
-//
-//                @Override
-//                public void messageArrived(String topic, MqttMessage message) throws Exception {
-//                    // Handle incoming MQTT messages
-//                }
-//
-//                @Override
-//                public void deliveryComplete(IMqttDeliveryToken token) {
-//                    // Handle message delivery completion
-//                }
-//            });
-//        } catch (MqttException e) {
-//            e.printStackTrace();
-//            // Handle MQTT connection exception
-//        }
-//    }
 
-    public void connectToMqttBroker(Context context) throws MqttException {
-        mqttAndroidClient = new MqttAndroidClient(this, serverUri, clientId, null);
-        mqttAndroidClient.setCallback(new MqttCallbackExtended() {
-            @Override
-            public void connectComplete(boolean reconnect, String serverURI) {
-                // Connection established
-                Log.d("MQTT", "Connected to MQTT Broker");
-            }
-
-            @Override
-            public void connectionLost(Throwable cause) {
-                // Connection lost
-            }
-
-            @Override
-            public void messageArrived(String topic, MqttMessage message) throws Exception {
-                // New message received
-            }
-
-            @Override
-            public void deliveryComplete(IMqttDeliveryToken token) {
-                // Message delivered
-            }
-        });
-
-        MqttConnectOptions connectOptions = new MqttConnectOptions();
-        connectOptions.setCleanSession(true);
-        connectOptions.setAutomaticReconnect(true);
-        connectOptions.setUserName(username);
-        connectOptions.setPassword(password.toCharArray());
-
-        if(mqttAndroidClient != null){
-            mqttAndroidClient.connect(connectOptions, null, new IMqttActionListener() {
-                @Override
-                public void onSuccess(IMqttToken asyncActionToken) {
-                    // Connection successful
-                }
-
-                @Override
-                public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
-                    // Connection failed
-                }
-            });
-        } else {
-            return;
-        }
-
-    }
 
     private Notification createNotification() {
         createNotificationChannel();

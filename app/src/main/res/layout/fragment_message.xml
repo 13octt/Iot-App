@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/gray_cus_light"
     android:layout_height="match_parent"
+    android:background="@color/gray_cus_light"
     android:orientation="vertical"
-    tools:context=".Fragment.SettingFragment">
+    tools:context=".Fragment.Message.MessageFragment">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
@@ -17,13 +17,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/receiver"/>
+            android:text="@string/receiver" />
 
         <TextView
+            android:id="@+id/txt_sender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/sender"
-            />
+            android:text="@string/sender" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -33,18 +33,20 @@
         android:orientation="horizontal">
 
         <EditText
+            android:id="@+id/et_send_message"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
-            android:paddingStart="5dp"
-            android:background="@drawable/edittext_background"
             android:layout_weight="0.8"
-            android:text="@string/hello"
             android:autofillHints="Hello"
+            android:background="@drawable/edittext_background"
             android:inputType="none"
+            android:paddingStart="5dp"
+            android:text="@string/hello"
             tools:ignore="LabelFor,RtlSymmetry" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floating_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"

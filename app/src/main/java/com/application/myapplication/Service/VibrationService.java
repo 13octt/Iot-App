@@ -37,9 +37,6 @@ import retrofit2.Response;
 
 
 public class VibrationService extends Service {
-
-    private Vibrator vibrator;
-    public boolean isRunning;
     private static final int NOTIFICATION_ID = 1;
     private static final String CHANNEL_ID = "AlertChannel";
     private Context context;
@@ -48,11 +45,6 @@ public class VibrationService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-//        callTempHumidityValue();
-//        vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
-//        isRunning = true;'
-//        ContextCompat.startForegroundService(this, intent);
-
         context = this;
     }
 
@@ -62,8 +54,7 @@ public class VibrationService extends Service {
 
         Notification notification = createNotification();
         flag = false;
-        showDangerNotification();
-        // Start the service in the foreground
+        showSafeNotification();
         startForeground(NOTIFICATION_ID, notification);
 
         Timer timer = new Timer();
@@ -74,26 +65,7 @@ public class VibrationService extends Service {
             }
         };
         timer.schedule(timerTask, 0, 5000);
-//        startForeground(NOTIFICATION_ID, createNotification(s));
-//        startVibration();
         return START_STICKY;
-    }
-
-//    @Override
-//    public void onDestroy() {
-//        super.onDestroy();
-//        stopVibration();
-//        Log.d("LC", "onDestroy");
-//        isRunning = false;
-//    }
-
-    private void startVibration() {
-        long[] pattern = {0, 1000}; // Mẫu rung (rung 0ms, tắt 1 giây)
-        vibrator.vibrate(pattern, 0);
-    }
-
-    private void stopVibration() {
-        vibrator.cancel();
     }
 
     @Nullable
@@ -147,7 +119,6 @@ public class VibrationService extends Service {
                     }
                 }
             }
-
             @Override
             public void onFailure(@NonNull Call<List<Gauge>> call, @NonNull Throwable t) {
             }

@@ -1,4 +1,4 @@
-package com.application.myapplication.Fragment;
+package com.application.myapplication.Fragment.Camera;
 
 import android.os.Bundle;
 
@@ -9,18 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.application.myapplication.R;
-import com.github.mikephil.charting.charts.LineChart;
 
-public class SettingFragment extends Fragment {
+public class CameraFragment extends Fragment {
 
-    private LineChart chartTemperature;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_setting, container, false);
-
-        return view;
+        return inflater.inflate(R.layout.fragment_camera, container, false);
     }
 }

@@ -20,10 +20,10 @@ import com.application.myapplication.Api.ApiRetrofit;
 import com.application.myapplication.Api.ApiService;
 import com.application.myapplication.Call.DataReceived;
 import com.application.myapplication.Call.Gauge;
-import com.application.myapplication.Fragment.CameraFragment;
+import com.application.myapplication.Fragment.Camera.CameraFragment;
 import com.application.myapplication.Fragment.Home.HomeFragment;
 import com.application.myapplication.Fragment.Insight.InsightFragment;
-import com.application.myapplication.Fragment.SettingFragment;
+import com.application.myapplication.Fragment.Message.MessageFragment;
 import com.application.myapplication.User.SplashActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 selectedFragment = currentFragment;
             } else if (currentFragment instanceof  InsightFragment && item.getItemId() == R.id.action_profile){
                 selectedFragment = currentFragment;
-            } else if (currentFragment instanceof SettingFragment && item.getItemId() == R.id.action_setting) {
+            } else if (currentFragment instanceof MessageFragment && item.getItemId() == R.id.action_setting) {
                 selectedFragment = currentFragment;
             } else {
                 switch (item.getItemId()) {
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 //                    replaceFragment(selectedFragment);
                         break;
                     case R.id.action_setting:
-                        selectedFragment = new SettingFragment();
+                        selectedFragment = new MessageFragment();
 //                    replaceFragment(selectedFragment);
                 }
             }

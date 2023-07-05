@@ -82,6 +82,7 @@ public class BedRoomFragment extends Fragment {
             Notification notification = new NotificationCompat.Builder(context, "channel_id")
                     .setContentTitle("Foreground Service")
                     .setContentText("Service is running...")
+                    .setSound(null)
                     .setSmallIcon(R.drawable.ic_notification)
                     .build();
 //            startForegroundService(20, notification);
@@ -93,7 +94,6 @@ public class BedRoomFragment extends Fragment {
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         this.context = requireContext();
-        MqttService mqttService = new MqttService();
     }
 
     @SuppressLint("WrongConstant")
@@ -115,7 +115,7 @@ public class BedRoomFragment extends Fragment {
         // MQTT
         mqttAndroidClient = new MqttAndroidClient(context, serverUri, clientId, Ack.AUTO_ACK);
         connectToMQTTBroker();
-//        mqttCallBack();
+        mqttCallBack();
 //        startMqttService();
 //        startForeground();
         Intent serviceIntent = new Intent(context, VibrationService.class);
