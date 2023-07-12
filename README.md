@@ -7,8 +7,9 @@ A smart home designed to assist individuals with hearing and speech impairments 
 - [@Tzuy284](https://github.com/Tzuy284)
 - [@13octt](https://github.com/13octt)
 
-##DEMO
-Link : https://drive.google.com/drive/folders/1AkHAFUreFcuEmpNFCh-jfWsbMrk2Ij_K?usp=sharing
+## DEMO
+
+- Link : https://drive.google.com/drive/folders/1AkHAFUreFcuEmpNFCh-jfWsbMrk2Ij_K?usp=sharing
   
 ## Features
 
